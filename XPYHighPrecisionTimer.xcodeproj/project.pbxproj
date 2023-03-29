@@ -8,11 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		E354E80028E2E1EA00749C80 /* XPYHighPrecisionTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = E354E7FF28E2E1EA00749C80 /* XPYHighPrecisionTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E39B4E2928F3FA77001DC204 /* XPYTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = E39B4E2728F3FA77001DC204 /* XPYTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E39B4E2A28F3FA77001DC204 /* XPYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E39B4E2828F3FA77001DC204 /* XPYTimer.m */; };
+		E39B4E4728F40E26001DC204 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E39B4E4628F40E26001DC204 /* AppDelegate.m */; };
+		E39B4E4A28F40E26001DC204 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E39B4E4928F40E26001DC204 /* SceneDelegate.m */; };
+		E39B4E4D28F40E26001DC204 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39B4E4C28F40E26001DC204 /* ViewController.m */; };
+		E39B4E5028F40E26001DC204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39B4E4E28F40E26001DC204 /* Main.storyboard */; };
+		E39B4E5228F40E28001DC204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39B4E5128F40E28001DC204 /* Assets.xcassets */; };
+		E39B4E5528F40E28001DC204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39B4E5328F40E28001DC204 /* LaunchScreen.storyboard */; };
+		E39B4E5828F40E28001DC204 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E39B4E5728F40E28001DC204 /* main.m */; };
+		E39B4E5D28F40E58001DC204 /* XPYHighPrecisionTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E354E7FC28E2E1EA00749C80 /* XPYHighPrecisionTimer.framework */; };
+		E39B4E5E28F40E58001DC204 /* XPYHighPrecisionTimer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E354E7FC28E2E1EA00749C80 /* XPYHighPrecisionTimer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E39B4E5F28F40E58001DC204 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E354E7F328E2E1EA00749C80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E354E7FB28E2E1EA00749C80;
+			remoteInfo = XPYHighPrecisionTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E39B4E6128F40E58001DC204 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E39B4E5E28F40E58001DC204 /* XPYHighPrecisionTimer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E354E7FC28E2E1EA00749C80 /* XPYHighPrecisionTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPYHighPrecisionTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E354E7FF28E2E1EA00749C80 /* XPYHighPrecisionTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPYHighPrecisionTimer.h; sourceTree = "<group>"; };
+		E39B4E2728F3FA77001DC204 /* XPYTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPYTimer.h; sourceTree = "<group>"; };
+		E39B4E2828F3FA77001DC204 /* XPYTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPYTimer.m; sourceTree = "<group>"; };
+		E39B4E4328F40E26001DC204 /* XPYHighPrecisionTimerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XPYHighPrecisionTimerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E39B4E4528F40E26001DC204 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E39B4E4628F40E26001DC204 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E39B4E4828F40E26001DC204 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		E39B4E4928F40E26001DC204 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		E39B4E4B28F40E26001DC204 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E39B4E4C28F40E26001DC204 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E39B4E4F28F40E26001DC204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E39B4E5128F40E28001DC204 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E39B4E5428F40E28001DC204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E39B4E5628F40E28001DC204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E39B4E5728F40E28001DC204 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +72,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E39B4E4028F40E26001DC204 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39B4E5D28F40E58001DC204 /* XPYHighPrecisionTimer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -30,7 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				E354E7FE28E2E1EA00749C80 /* XPYHighPrecisionTimer */,
+				E39B4E4428F40E26001DC204 /* XPYHighPrecisionTimerTest */,
 				E354E7FD28E2E1EA00749C80 /* Products */,
+				E39B4E5C28F40E58001DC204 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -38,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E354E7FC28E2E1EA00749C80 /* XPYHighPrecisionTimer.framework */,
+				E39B4E4328F40E26001DC204 /* XPYHighPrecisionTimerTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,8 +106,35 @@
 			isa = PBXGroup;
 			children = (
 				E354E7FF28E2E1EA00749C80 /* XPYHighPrecisionTimer.h */,
+				E39B4E2728F3FA77001DC204 /* XPYTimer.h */,
+				E39B4E2828F3FA77001DC204 /* XPYTimer.m */,
 			);
 			path = XPYHighPrecisionTimer;
+			sourceTree = "<group>";
+		};
+		E39B4E4428F40E26001DC204 /* XPYHighPrecisionTimerTest */ = {
+			isa = PBXGroup;
+			children = (
+				E39B4E4528F40E26001DC204 /* AppDelegate.h */,
+				E39B4E4628F40E26001DC204 /* AppDelegate.m */,
+				E39B4E4828F40E26001DC204 /* SceneDelegate.h */,
+				E39B4E4928F40E26001DC204 /* SceneDelegate.m */,
+				E39B4E4B28F40E26001DC204 /* ViewController.h */,
+				E39B4E4C28F40E26001DC204 /* ViewController.m */,
+				E39B4E4E28F40E26001DC204 /* Main.storyboard */,
+				E39B4E5128F40E28001DC204 /* Assets.xcassets */,
+				E39B4E5328F40E28001DC204 /* LaunchScreen.storyboard */,
+				E39B4E5628F40E28001DC204 /* Info.plist */,
+				E39B4E5728F40E28001DC204 /* main.m */,
+			);
+			path = XPYHighPrecisionTimerTest;
+			sourceTree = "<group>";
+		};
+		E39B4E5C28F40E58001DC204 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -57,6 +144,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39B4E2928F3FA77001DC204 /* XPYTimer.h in Headers */,
 				E354E80028E2E1EA00749C80 /* XPYHighPrecisionTimer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +170,25 @@
 			productReference = E354E7FC28E2E1EA00749C80 /* XPYHighPrecisionTimer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E39B4E4228F40E26001DC204 /* XPYHighPrecisionTimerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E39B4E5B28F40E28001DC204 /* Build configuration list for PBXNativeTarget "XPYHighPrecisionTimerTest" */;
+			buildPhases = (
+				E39B4E3F28F40E26001DC204 /* Sources */,
+				E39B4E4028F40E26001DC204 /* Frameworks */,
+				E39B4E4128F40E26001DC204 /* Resources */,
+				E39B4E6128F40E58001DC204 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E39B4E6028F40E58001DC204 /* PBXTargetDependency */,
+			);
+			name = XPYHighPrecisionTimerTest;
+			productName = XPYHighPrecisionTimerTest;
+			productReference = E39B4E4328F40E26001DC204 /* XPYHighPrecisionTimerTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +199,9 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					E354E7FB28E2E1EA00749C80 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					E39B4E4228F40E26001DC204 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
@@ -110,6 +220,7 @@
 			projectRoot = "";
 			targets = (
 				E354E7FB28E2E1EA00749C80 /* XPYHighPrecisionTimer */,
+				E39B4E4228F40E26001DC204 /* XPYHighPrecisionTimerTest */,
 			);
 		};
 /* End PBXProject section */
@@ -122,6 +233,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E39B4E4128F40E26001DC204 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39B4E5528F40E28001DC204 /* LaunchScreen.storyboard in Resources */,
+				E39B4E5228F40E28001DC204 /* Assets.xcassets in Resources */,
+				E39B4E5028F40E26001DC204 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -129,10 +250,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39B4E2A28F3FA77001DC204 /* XPYTimer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39B4E3F28F40E26001DC204 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39B4E4D28F40E26001DC204 /* ViewController.m in Sources */,
+				E39B4E4728F40E26001DC204 /* AppDelegate.m in Sources */,
+				E39B4E5828F40E28001DC204 /* main.m in Sources */,
+				E39B4E4A28F40E26001DC204 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E39B4E6028F40E58001DC204 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E354E7FB28E2E1EA00749C80 /* XPYHighPrecisionTimer */;
+			targetProxy = E39B4E5F28F40E58001DC204 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E39B4E4E28F40E26001DC204 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E39B4E4F28F40E26001DC204 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E39B4E5328F40E28001DC204 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E39B4E5428F40E28001DC204 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E354E80128E2E1EA00749C80 /* Debug */ = {
@@ -254,6 +414,7 @@
 		E354E80428E2E1EA00749C80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -264,6 +425,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -281,6 +443,7 @@
 		E354E80528E2E1EA00749C80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -291,6 +454,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,6 +464,62 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xlp.XPYHighPrecisionTimer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E39B4E5928F40E28001DC204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35A6KD62ZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XPYHighPrecisionTimerTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xlp.XPYHighPrecisionTimerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E39B4E5A28F40E28001DC204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35A6KD62ZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XPYHighPrecisionTimerTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xlp.XPYHighPrecisionTimerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,6 +542,15 @@
 			buildConfigurations = (
 				E354E80428E2E1EA00749C80 /* Debug */,
 				E354E80528E2E1EA00749C80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E39B4E5B28F40E28001DC204 /* Build configuration list for PBXNativeTarget "XPYHighPrecisionTimerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E39B4E5928F40E28001DC204 /* Debug */,
+				E39B4E5A28F40E28001DC204 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
