@@ -24,7 +24,7 @@ static int frame = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.timer = [[XPYTimer alloc] initWithFPS:60 clockHandler:^{
+    self.timer = [[XPYTimer alloc] initWithFPS:60 handler:^{
         CFAbsoluteTime start_time = CFAbsoluteTimeGetCurrent();
         CFAbsoluteTime frame_time = start_time - old_time;
         total_time += (frame_time * 1000);
@@ -38,11 +38,10 @@ static int frame = 0;
             frame = 0;
         }
     }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.timer invalidate];
     });
-    
 }
 
 @end

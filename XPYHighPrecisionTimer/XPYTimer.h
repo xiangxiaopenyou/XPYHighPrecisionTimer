@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - FPS: 频率
 ///   - handler: 回调
-- (instancetype)initWithFPS:(NSInteger)FPS clockHandler:(nullable void (^)(void))handler;
+- (instancetype)initWithFPS:(NSInteger)FPS handler:(nullable void (^)(void))handler;
 
 - (void)invalidate;
 

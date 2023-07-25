@@ -14,11 +14,11 @@
 // 默认线程循环提前时间
 static const double kXPYAdvancedTime = 0.01;
 
-/// 系统心跳，返回单位秒
+/// 系统心跳（转换因子）
 double mach_clock_time(void) {
     mach_timebase_info_data_t timebase_info;
     mach_timebase_info(&timebase_info);
-    double clock = 1e-9 * ((double) timebase_info.numer / (double)timebase_info.denom);
+    double clock = (double) timebase_info.numer / (double)timebase_info.denom;
     return clock;
 }
 
@@ -40,7 +40,7 @@ double mach_clock_time(void) {
     uint64_t lastFrameTime;
 }
 
-- (instancetype)initWithFPS:(NSInteger)FPS clockHandler:(void (^)(void))handler {
+- (instancetype)initWithFPS:(NSInteger)FPS handler:(void (^)(void))handler {
     self = [super init];
     if (self) {
         if (FPS <= 0) {
@@ -50,7 +50,7 @@ double mach_clock_time(void) {
         self.timerClock = handler;
         
         clock_time = mach_clock_time();
-        nanoseconds_per_frame = 1.0/FPS/clock_time;
+        nanoseconds_per_frame = (1.0 / FPS) * NSEC_PER_SEC;
         running = YES;
         
         [self createThread];
@@ -99,33 +99,19 @@ void thread_signal(int signal) {}
         }
         // 任务结束时间
         uint64_t end_time = mach_absolute_time();
-        // 任务执行周期
+        // 任务执行周期（系统心跳数）
         uint64_t duration = end_time - begin_time;
-        if(duration < nanoseconds_per_frame) { // 任务执行时间小于限制时间
-            // 计算需要等待的最终精确时间点
-            NSTimeInterval deadline_interval = (end_time + nanoseconds_per_frame - duration) * clock_time;
-            // 提前精确时间点
-            NSTimeInterval wait_time_interval = deadline_interval - kXPYAdvancedTime;
+        // 任务执行周期精确时间（心跳数 * 转换因子）
+        NSTimeInterval duration_time = duration * clock_time;
+        if(duration_time < nanoseconds_per_frame) { // 任务执行周期小于限制时间
+            // 任务最后期限精确时间点
+            NSTimeInterval deadline = end_time + (nanoseconds_per_frame - duration_time) / clock_time;
+            // 任务提前精确时间点
+            NSTimeInterval advanced = end_time + (nanoseconds_per_frame - duration_time) / clock_time - (kXPYAdvancedTime * NSEC_PER_SEC / clock_time);
             // 等待
-            mach_wait_until(wait_time_interval / clock_time);
-            if (mach_absolute_time() < deadline_interval / clock_time) { // 当前还没到最终时间
-                // 计算当前时间点与最终时间点差值
-                uint64_t deadline_time = deadline_interval / clock_time;
-                uint64_t current_time = mach_absolute_time();
-                uint64_t difference_time = deadline_time - current_time;
-                double difference_nano_time = difference_time * clock_time / 1e-9;
-                struct timespec rqtp;
-                rqtp.tv_sec = difference_nano_time * 1.0e-9;
-                rqtp.tv_nsec = difference_nano_time;
-                // sleep
-                if (nanosleep(&rqtp, NULL) == -1) {
-                    NSLog(@"Error");
-                }
+            mach_wait_until(advanced);
+            while (mach_absolute_time() < deadline) {
             }
-            
-//            while (mach_absolute_time() < deadline_interval / clock_time && mach_absolute_time() > wait_time_interval / clock_time) {
-//                // 循环等待
-//            }
         }
     }
 }

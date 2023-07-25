@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XPYTimer.h"
+#import <XPYHighPrecisionTimer/XPYTimer.h>
 
 //! Project version number for XPYHighPrecisionTimer.
 FOUNDATION_EXPORT double XPYHighPrecisionTimerVersionNumber;
