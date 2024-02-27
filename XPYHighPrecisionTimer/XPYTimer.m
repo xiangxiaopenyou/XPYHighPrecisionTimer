@@ -66,13 +66,14 @@ double mach_clock_time(void) {
     pthread_attr_init(&attr);
     // 设置调度策略为先进先出
     pthread_attr_setschedpolicy(&attr, SCHED_FIFO);
-    // 设置线程状态为joinable
+    // 设置线程脱离状态属性为 joinable（表示允许线程合并）
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     // 设置调度优先级最大值
     struct sched_param sched;
     sched.sched_priority = sched_get_priority_max(SCHED_FIFO);
     pthread_attr_setschedparam(&attr, &sched);
-    int result = pthread_create(&pthread, &attr, (void *)run_for_thread, (__bridge void *)self);
+    // (__bridge void*)self 作为入口函数的参数
+    int result = pthread_create(&pthread, &attr, run_for_thread, (__bridge void *)self);
     if (result != 0) {
         NSLog(@"Create thread failed!");
     }
@@ -80,9 +81,16 @@ double mach_clock_time(void) {
     pthread_attr_destroy(&attr);
 }
 
-void run_for_thread(void *arg) {
+/// 线程任务入口函数指针
+void * run_for_thread(void *arg) {
     XPYTimer *timer = (__bridge XPYTimer *)arg;
     [timer run];
+    return NULL;
+}
+
+// 终止线程
+void exit_thread(void) {
+    // 终止线程
     pthread_exit(NULL);
 }
 
@@ -107,19 +115,20 @@ void thread_signal(int signal) {}
             // 任务最后期限精确时间点
             NSTimeInterval deadline = end_time + (nanoseconds_per_frame - duration_time) / clock_time;
             // 任务提前精确时间点
-            NSTimeInterval advanced = end_time + (nanoseconds_per_frame - duration_time) / clock_time - (kXPYAdvancedTime * NSEC_PER_SEC / clock_time);
-            // 等待
-            mach_wait_until(advanced);
+//            NSTimeInterval advanced = end_time + (nanoseconds_per_frame - duration_time) / clock_time - (kXPYAdvancedTime * NSEC_PER_SEC / clock_time);
+//            // 等待
+//            mach_wait_until(advanced);
             while (mach_absolute_time() < deadline) {
             }
         }
     }
+    exit_thread();
 }
 
 - (void)invalidate {
     if (running) {
         running = NO;
-        // 挂起等待线程结束，释放资源
+        // 等待线程结束，释放资源，如果已经结束会立即返回
         void *result;
         pthread_join(pthread, &result);
     }

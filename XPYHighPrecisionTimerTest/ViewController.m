@@ -24,7 +24,7 @@ static int frame = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.timer = [[XPYTimer alloc] initWithFPS:60 handler:^{
+    self.timer = [[XPYTimer alloc] initWithFPS:30 handler:^{
         CFAbsoluteTime start_time = CFAbsoluteTimeGetCurrent();
         CFAbsoluteTime frame_time = start_time - old_time;
         total_time += (frame_time * 1000);
